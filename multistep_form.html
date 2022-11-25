@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>multistep form</title>
+    </head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <body>
+     <div class="container">
+     <form id="form1">
+      <h3>CREATE ACCOUNT</h3>
+      <input type="text" placeholder="Email" required>
+      <input type="password" placeholder="Password" required>
+      <input type="password" placeholder="confirm password" required>
+   
+      <div class="btn_box">
+        <button type="button" id="next1">Next</button>
+    </div>
+</form>
+
+<form id="form2">
+    <h3>SOCIAL lINKS</h3>
+    <input type="text" placeholder="Medium">
+    <input type="text" placeholder="Github">
+    <input type="text" placeholder="Linkedin">
+ 
+    <div class="btn_box">
+      <button type="button" id="back1">Back</button>
+      <button type="button" id="next2">Next</button>
+
+  </div>
+</form>
+
+<form id="form3">
+    <h3>PERSONAL INFO</h3>
+    <input type="text" placeholder="First Name" required>
+    <input type="text" placeholder="Last Name" required>
+    <input type="text" placeholder="Mobile No" required>
+ 
+    <div class="btn_box">
+      <button type="button" id="back2">Back</button>
+      <button type="submit">Submit</button>
+
+  </div>
+</form>
+
+<div class="step_row">
+    <div id="progress"></div>
+    <div class="step-col"><small>step 1</small></div>
+    <div class="step-col"><small>step 2</small></div>
+    <div class="step-col"><small>step 3</small></div>
+
+</div>
+
+</div>
+
+<script>
+ var form1=document.getElementById('form1');
+ var form2=document.getElementById('form2');
+ var form3=document.getElementById('form3');
+ 
+ var next1=document.getElementById('next1');
+ var next2=document.getElementById('next2');
+ var back1=document.getElementById('back1');
+ var back2=document.getElementById('back2');
+
+ var progress=document.getElementById('progress');
+
+next1.onclick= function(){
+    form1.style.left="-450px"; //form1 will go left side
+    form2.style.left="40px"; //same time form2 will go main box
+    progress.style.width='240px';
+}
+
+back1.onclick= function(){
+    form1.style.left="40px"; //form1 will go left side
+    form2.style.left="450px"; //same time form2 will go main box
+    progress.style.width='120px';
+
+}
+next2.onclick= function(){
+    form2.style.left="-450px"; //form1 will go left side
+    form3.style.left="40px"; //same time form2 will go main box
+    progress.style.width='360px';
+}
+back2.onclick= function(){
+    form2.style.left="40px"; //form1 will go left side
+    form3.style.left="450px"; //same time form2 will go main box
+    progress.style.width='240px';
+}
+</script>
+    </body>
+</html>
